@@ -1,2 +1,4 @@
-# stringFormat.js
-Just tiny simple hepler to format string in c#-style in js
+### stringFormat.js
+###### Just tiny simple string extension to format string in c\#-style for JavaScript
+###### Usage Example:
+##### '{0} {1}'.format('Hello', 'world')  

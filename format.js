@@ -13,7 +13,7 @@
 			, cons = console && console.warn; // for IE8
 		if(!arguments.length){
 			if(cons){
-				console.warn(str + '.format(args[]) was invoked without any arguments')
+				console.warn(str + '.format(args[]) was invoked without any arguments');
 			}
 			return str;
 		}

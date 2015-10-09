@@ -9,9 +9,12 @@
 	* @return {string} Formated string.
 	*/
 	String.prototype.format = function(){
-		var str = this.valueOf();
+		var str = this.valueOf()
+			, cons = console && console.warn; // for IE8
 		if(!arguments.length){
-			console.warn(str + '.format(args[]) was invoked without any arguments')
+			if(cons){
+				console.warn(str + '.format(args[]) was invoked without any arguments')
+			}
 			return str;
 		}
 		var tokens = str.match(/{\d+}/gi)
@@ -21,7 +24,11 @@
 			var token = tokens[i]
 				, index = token.match(/\d+/);
 			if(index>=arguments.length){
-				console.warn('"' + this.valueOf() + '".format(args[]): there is no argument for token: ' + token + '. You may missed it');
+				if(cons){
+					console.warn('"' + this.valueOf()
+					 + '".format(args[]): there is no argument for token: '
+					 + token + '. You may missed it');
+				}
 				continue;
 			}
 			str = str.replace(token, arguments[index]);

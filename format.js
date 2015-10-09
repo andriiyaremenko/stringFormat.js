@@ -4,13 +4,13 @@
 	* Formats string in c#-like way.
 	* Example: '{0} {1}'.format('Hello', 'world')
 	* @this {String}
-	* @param {any} Arguments that string will be replaced with. Each {n} will be raplaced with n-th argument 
+	* @param {any} Arguments that string will be replaced with. Each {n} will be raplaced with n-th argument
 	* @return {string} Formated string.
 	*/
 	String.prototype.format = function(){
 		var str = this.valueOf();
 		if(!arguments.length){
-			console.warn('String.format([args]) was invoked without any arguments')
+			console.warn(str + '.format(args[]) was invoked without any arguments')
 			return str;
 		}
 		var tokens = str.match(/{\d+}/gi)
@@ -20,7 +20,7 @@
 			var token = tokens[i]
 				, index = token.match(/\d+/);
 			if(index>=arguments.length){
-				console.warn('there is no argument for token: ' + token + '. You may missed it');
+				console.warn('"' + this.valueOf() + '".format(args[]): there is no argument for token: ' + token + '. You may missed it');
 				continue;
 			}
 			str = str.replace(token, arguments[index]);

@@ -4,7 +4,6 @@
  	* repository: https://github.com/yarrem/stringFormat.js 
 	* Formats string in c#-like way.
 	* Example: '{0} {1}'.format('Hello', 'world')
-	* @author Andrii Yaremenko
 	* @this {String}
 	* @param {any} Arguments that string will be replaced with. Each {n} will be raplaced with n-th argument
 	* @return {string} Formated string.
